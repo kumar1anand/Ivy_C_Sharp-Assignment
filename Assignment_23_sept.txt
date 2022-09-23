@@ -1,0 +1,224 @@
+1.) Write a program in C# to catch a FormatException and throw an appropriate error message to the user.
+Solution:
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Enter a string: ");
+        string str = Console.ReadLine();
+               
+        try
+        {
+            int a = (Convert.ToInt32(str));
+        }
+        catch (FormatException e)
+        {
+            Console.WriteLine("Sorry it can't be converted.Try to take proper input!  ");
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+
+2.) Write a program in C# to perform 3 or 4 arithmetic operations like getting the square root, etc. 
+Also divide a number by zero so that a divide by zero exception gets thrown. Catch the exception and display error messages accordingly.
+Solution:
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        
+        Console.WriteLine("Enter num1:");
+        int a= Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter num2: ");
+        int b= Convert.ToInt32(Console.ReadLine()); 
+        try
+        {
+          double op1=Math.Sqrt(a);
+            int op2 = a / b;
+            int op3= a % b;
+            int op4 = a / 0;
+
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);  
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+
+3.) Write a program in C# where there is a base Order class. Inherit child classes such as Food Orders, Grocery Orders and Clothing Orders etc. 
+Calculate the GST (Goods and Service Taxes) separately with percentages 5, 8 and 10 respectively.
+Solution:
+
+using System;
+
+public class Order
+{
+    
+    public int magi = 10;
+    public int pizza = 110;
+    public int Lollipop_Chicken = 180;
+
+    public int banana = 40;
+    public int mirch = 15;
+    public int mashala = 5;
+
+    public int jeans = 1200;
+    public int tshirt = 500;
+    public int blazer = 5000;
+
+
+}
+public class Food_Orders :Order
+{
+    public double GST_Food(int price)
+    {
+        
+        return price * 0.05;
+    }
+}
+
+public class Grocer_Orders:Order 
+{
+    public double GST_Grocer(int price)
+    {
+        
+        return price * 0.08;
+    }
+}
+public class Clothing_Orders: Order
+{    public double GST_Clothing(int price)
+    {
+        return price * 0.08;
+    }
+}
+public class Inheritance
+{
+    public static void Main()
+    {
+       
+        Order o = new Order();
+        int price1 = o.jeans + o.tshirt + o.blazer;
+        int price2 = o.banana + o.mirch + o.mashala;
+        int price3 = o.magi + o.pizza + o.Lollipop_Chicken;
+        Food_Orders f1= new Food_Orders();
+        double res1 = f1.GST_Food(price3);
+        Console.WriteLine("GST on Food is: ");
+        Console.WriteLine(res1);
+        Grocer_Orders g = new Grocer_Orders();
+        double res2= g.GST_Grocer(price2);
+        Console.WriteLine("GST on Grocery is: ");
+        Console.WriteLine(res2); 
+        Clothing_Orders c = new Clothing_Orders();
+        double res3 = c.GST_Clothing(price1);
+        Console.WriteLine("GST on Clothing is: ");
+        Console.WriteLine(res3);
+    }
+}
+
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+
+4.) Write a program in C# to create a University Class. Base class can be people, derived classes can be Student, Teacher and Librarian. 
+The student can take a book (from a library) , give attendance, and attend a class. The teacher can take a book (for more
+ days than the student), give and take attendance, and take a class. The librarian can allot a book, give attendance. 
+Create methods that can be overloaded depending on the calling person.
+Solution:
+
+namespace ConsoleApp13
+{
+
+    internal class Program
+    {
+        public class people
+        {
+            bool take_a_book;
+            bool give_attendance;
+            bool take_attendance;
+            bool attend_class;
+            bool take_class;
+            bool allot_a_book;
+        }
+        public class Student : people
+        {
+            public void Can_do(bool take_a_book, bool give_attendance, bool attend_class)
+            {
+                Console.WriteLine("Student can take a book: " + take_a_book);
+                Console.WriteLine("Student can give attendance: " + give_attendance);
+                Console.WriteLine("Student can attend class: " + attend_class);
+            }
+        }
+
+        public class Teacher : people
+        {
+            public void Can_do(bool take_class, bool give_attendance, bool take_attendance, bool take_book)
+            {
+                Console.WriteLine("Teacher can take class: " + take_class);
+                Console.WriteLine("Teacher can give attendance: " + give_attendance);
+                Console.WriteLine("Teacher can take attendance: " + take_attendance);
+                Console.WriteLine("Teacher can take book: " + take_book);
+            }
+
+        }
+
+        public class Librarian : people
+        {
+            public void Can_do(bool allot_a_book, bool give_attendance)
+            {
+                Console.WriteLine("librarian can attlt a book: " + allot_a_book);
+                Console.WriteLine("librarian can give attendance: " + give_attendance);
+            }
+        }
+        static void Main(string[] args)
+        {
+           
+            
+            Student s = new Student();
+            s.Can_do(true, true, true);
+
+            Teacher t = new Teacher();
+            t.Can_do(true, false, true, false);
+
+            Librarian l = new Librarian();
+            l.Can_do(true, false);
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+
+5.) Write a program in C# to create a bank account as an abstract class. Ask the user for his/her aadhar. 
+Call a method to link bank account number with the aadhar number in an abstract method.
+Solution:
+
+namespace ConsoleApp14
+{
+    abstract class Bank_account
+    {
+        public abstract void LinkBankAccountNumber(int  AadharNumber);
+    }
+     class User : Bank_account
+    {
+        public override void LinkBankAccountNumber(int AadharNumber)
+        {
+            Console.WriteLine("Bank accout is now linked with Aadhar: " + AadharNumber);
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Bank_account user = new User();
+            user.LinkBankAccountNumber(1234567);
+        }
+    }
+}
