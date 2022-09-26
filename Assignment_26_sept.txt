@@ -1,0 +1,146 @@
+1.) Write a program in C# Sharp to append some text to an existing file. 
+Solution:
+
+namespace DA_Assignment_26_sept
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Declaraction
+            string str = @"C:\Users\anand.kumar\OneDrive - Entain Group\Documents\DA_Assignment\append_some_text.txt";
+            StreamWriter sw = File.AppendText(str);//open stream writer to append file.
+            //accept comment from user in a string variable
+            Console.WriteLine("Plese enter your text: ");
+            string str2 = Console.ReadLine();
+            sw.WriteLine(str2);
+            sw.Close();
+        }
+    }
+}
+
+
+
+
+
+-----------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+2.) Write a program in C# Sharp to create a list with StudentID and StudentMarks as key value pair; use any suitable collection. Display the list on the screen. 
+Solution:
+namespace Collection_1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Console.WriteLine("Hello, World!");
+            Dictionary<int, int> m = new Dictionary<int, int>();
+            try
+            {
+                Console.Write("Enter number of student: ");
+                int num = Convert.ToInt32(Console.ReadLine());
+                for (int i = 0; i < num; i++)
+                {
+                    Console.Write("Enter student - id: ");
+                    int key = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Enter student -marks: ");
+                    int value = Convert.ToInt32(Console.ReadLine());
+                    m.Add(key, value);
+                }
+                foreach (KeyValuePair<int, int> pair in m)
+                {
+                    Console.WriteLine(pair.Key + " " + pair.Value);
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine("please enter correct input: ");
+            }
+            /*foreach(KeyValuePair<int, int> pair in m)
+            {
+                Console.WriteLine(pair.Key + " " + pair.Value);
+            }*/
+        }
+    }
+}
+
+
+
+
+
+
+-----------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+3.) The output should have list of IDs, Names and Pass Status of Students like [12, Rahul Y], [14, Kiran, N], etc. 
+Solution:
+
+using System;
+
+namespace assignment_26_sept
+{
+    class Program
+    {
+        static void Show(int id, string name, char c)
+        {
+            Console.WriteLine("[" +id+ ""+name+ ""+c+"]");
+        }
+        static void Main(string[] args)
+        {
+            //Console.WriteLine("Hello, World!");
+            int id=Convert.ToInt32(args[0]);    
+            string str= Console.ReadLine();
+            char c= Convert.ToChar(Console.ReadLine());
+            Show(id, str, c);
+
+        }
+    }
+}
+
+
+
+
+
+-----------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+4.) Write a C# program and use a Generic method to display the values; display atleast 5 students.
+Solution:
+
+
+using System;
+
+namespace assignment_26_sept
+{
+    class Program
+    {
+        public  void Show<T,T1,T2>(T id,T1 name, T2 branch)
+        {
+            Console.Write(id);
+           
+            Console.Write(name);
+            Console.Write(branch);
+       
+            
+        }
+        static void Main(string[] args)
+        {
+            
+            Program p = new Program();
+            p.Show(1, "shiva", "cse");
+            Console.WriteLine(" ");
+            p.Show(2, "anand", "bce");
+            Console.WriteLine(" ");
+            p.Show(3, "kumar", "it");
+            Console.WriteLine(" ");
+            p.Show(4, "piyush", "phd");
+            Console.WriteLine(" ");
+            p.Show(4, "shivam", "eee");
+
+
+            
+
+        }
+    }
+}
