@@ -1,0 +1,88 @@
+                                                                     Git
+Q.) Write a git command to add all the new and modified files
+
+Solution: git add --all
+
+Q.) Write a git command to commit directly without publishing to the staging environment.
+Solution: git add -u
+
+Q.)Learn what the following git commands do:
+ git init= creates new repository
+ 
+ git clone = used to make local copy of the remote repository
+ 
+ git diff= used to find out difference in files, branches,changes etc
+ 
+ git reset=git reset is a powerful command that is used to undo local changes to the state of a Git repo. Git reset operates on "The Three Trees of Git". 
+              These trees are the Commit History (HEAD), the Staging Index, and the Working Directory. 
+             There are three command line options that correspond to the three trees. The options --soft, --mixed, and --hard can be passed to git reset.
+             
+ git rm= The git rm command removes the file from both the git repository and the local file system. 
+ 
+ git log=review and read every changes that have happen to the repository
+ git show=  view expanded details on Git objects such as blobs, trees, tags, and commits
+ git branch=lets us create, list, rename, and delete branches
+ 
+ 
+ Write a git command to remove a particular branch from a local repository.
+  
+Solution:: git branch --delete <branchname>
+
+
+
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Write a C# program to:
+1.) Ask the name of the person, when the person gives an input, create a file with their name. 
+Get other details, like age, place of origin, known languages, etc and write them into the file. 
+Create a directory and have atleast 5 such files in ""People Info"" directory."
+Solution:
+
+
+---------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------
+2.) Write a C# program to copy the contents of one file to another file and move that file to a different location. 
+Solution:
+Exception
+
+namespace Day_27_assign
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //Console.WriteLine("Hello, World!");
+            File.Copy("C:\\Users\\anand.kumar\\OneDrive - Entain Group\\Documents\\DA_Assignment\\file1.txt", "C:\\Users\\anand.kumar\\OneDrive - Entain Group\\Documents\\DA_Assignment\\file2.txt");
+            //Console.WriteLine(File.ReadAllText("C:\\Users\\anand.kumar\\OneDrive - Entain Group\\Documents\\DA_Assignment\\file2.txt"));
+            File.Move(@"C:\Users\anand.kumar\OneDrive - Entain Group\Documents\DA_Assignment\\file2.txt", @"C:\\Users\\anand.kumar\\OneDrive - Entain Group\\Documents\\test\\gfg.txt");
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------
+3.) In a C# program, open a file from a directory and display the contents on screen. 
+For this program, write atleast 3 specific exceptions and display the appropriate error msg on screen. 
+Solution:
+---------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------
+4.) In a C# program, open a file from a directory and display the contents on screen. 
+Check whether the file exists, if not throw an error msg. Similarly, check whether the directory exists otherwise throw the error msg on screen.
