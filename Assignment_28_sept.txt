@@ -1,0 +1,201 @@
+1.) Write a statement lambda to calculate sum of 1 to n number.
+Solution:
+
+
+using System;
+namespace ConsoleApp20
+{
+    internal class Program
+    {
+        //Write a statement lambda to calculate sum of 1 to n number.
+
+        public delegate int cal(int a);
+        static void Main(string[] args)
+        {
+            //Console.WriteLine("Hello, World!");
+            cal obj = (n) =>
+            {
+                int sum = (n * (n + 1)) / 2;
+                return sum;
+            };
+            Console.WriteLine("Enter a number: ");
+            int num = int.Parse(Console.ReadLine());
+            Console.WriteLine(obj.Invoke(num)); ;
+        }
+
+        
+    }
+}
+
+-------------------
+--------------------
+2.) Write an expression lambda to find greater between two numbers.
+Solution: 
+
+using System;
+namespace ConsoleApp20
+{
+    internal class Program
+    {
+        //Write a statement lambda to calculate sum of 1 to n number.
+
+        public delegate int cal(int a,int b);
+        static void Main(string[] args)
+        {
+            //Console.WriteLine("Hello, World!");
+            cal obj = (num1,num2) =>(num1>num2)? num1: num2;
+            
+            Console.WriteLine("Enter a number-1: ");
+            int num1 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter a number-2: ");
+            int num2 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Largest number is: ");
+            Console.WriteLine(obj.Invoke(num1,num2)); ;
+        }
+
+        
+    }
+}
+-------------------------------
+-------------------------------
+
+3.) Write an lambda expression to swap given two numbers.
+using System;
+namespace ConsoleApp20
+{
+    internal class Program
+    {
+        //Write a statement lambda to calculate sum of 1 to n number.
+        public int num1, num2;
+        public delegate void cal(int a,int b);
+        static void Main(string[] args)
+        {
+            //Console.WriteLine("Hello, World!");
+            cal obj = (num1, num2) =>
+            {
+                int temp=num1;
+                num1=num2;
+                num2 = temp;
+
+            };
+            
+            Console.WriteLine("Enter a number-1: ");
+            int num1 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter a number-2: ");
+            int num2 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Number are: ");
+            obj.Invoke(num1,num2);
+            Console.WriteLine(num1);
+            Console.WriteLine(num2);
+        }
+
+        
+    }
+}
+
+-------------------------------
+-------------------------------
+4.) Write an anonymous function to check given number is prime or not.
+
+using System;
+
+namespace LambdaExpression
+{
+
+    // delegate ...  function pointer
+    public delegate int cal(int a);  // single cast 
+    
+
+    internal class Program
+    {
+        // delegates.... function pointer ...
+        // Anonymous function....  without name.... 2.0 
+        static void Main(string[] args)
+        {
+
+            // Anonymous method
+            cal obj = delegate (int n)
+            {
+                int a = 0;
+                for (int i = 1; i <= n; i++)
+                {
+                    if (n % i == 0)
+                    {
+                        a++;
+                    }
+                }
+                return a;
+
+            };
+            Console.WriteLine("Enter a number :");
+            int n = int.Parse(Console.ReadLine());
+
+            int a= obj.Invoke(n);
+            if (a == 2)
+            {
+                Console.WriteLine("{0} is a Prime Number", n);
+            }
+            else
+            {
+                Console.WriteLine("Not a Prime Number");
+            }
+            
+
+        }
+    }
+}
+
+-------------------------------
+-------------------------------
+5.) Write an lambda expression to print all prime numbers up to n.
+
+
+-------------------------------
+-------------------------------
+6.) Write an lambda expression to sort given array.
+Solution:
+
+using System;
+
+namespace LambdaExpression
+{
+
+    // delegate ...  function pointer
+
+    public delegate void cal(int[] a);  // single cast  
+
+    internal class Program
+    {
+        // delegates.... function pointer ...
+        // Anonymous function....  without name.... 2.0 
+        static void Main(string[] args)
+        {
+
+            // Anonymous method
+            cal obj = (int[] n) => Array.Sort(n);
+            
+            Console.WriteLine("Enter array size :");
+            int n = int.Parse(Console.ReadLine());
+
+            int[] arr = new int[] { 9, 2, 4, 3, 1};
+
+             obj.Invoke(arr);
+            for(int i = 0; i < arr.Length; i++)
+            {
+                Console.WriteLine(arr[i]);
+            }
+            
+            //obj = delegate (int q)
+            //{ Console.WriteLine(q * q * q); };
+            //obj.Invoke(20);
+
+        }
+    }
+}
+
+
+
