@@ -1,1 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <nav>
+        <img src="https://camo.githubusercontent.com/2491c8579de1447c08e2ea695bf0c97a62335f90cc1400891a068e70aa568e4d/68747470733a2f2f69312e66616365707265702e696e2f50726f477261642f70726f677261642d6c6f676f2e706e67" alt="logo" />
+        <ul>
+            <li> <a href="/displayCard.html">My Blogs</a></li>
+            <li> <a href="/displayCard.html">Login</a></li>
+            <li> <a href="/displayCard.html">Sign Up</a></li> 
+        </ul>
+    </nav>
+    <div class="body-div1">
+        <div>Your Blog Posts</div>
+        <a ><button class="button" id="addBlog" ><i class="fas fa-plus-circle"></i>Add New Post</button></a>  
+    </div>
+    <div class="body-div2">
+        <div class="article-card" id="flashcard">
+            <!-- <img src="./assets/java card image.svg" alt=""> -->
+                <div class="card-text" id="card-text">
+                    <!-- <h1 id="blog-title">sda</h1> -->
+                    <!-- <p id="blog-description">da</p> -->
+                    <!-- <p>Posted on</p> -->
+                </div>
+                  <!-- <div class="card-buttons">
+                    <a><button type="button" id="edit">EDIT</button></a> <span>|</span><a ><button id="delete">DELETE</button></a>
+                </div> -->
+        </div>
+    </div>
+    <div id="popupContact">
+        <button id="close"> <img id="close" src="./assets/close-button.svg"></button>
+        <img id="rect" src=./assets/rect.svg>
+        <h2>Your Post</h2>
+        <div id="card" >
+            <input type="hidden" name="blogId" value="" /> 
+            <input id="title" name="title" value="" placeholder="Title" type="text"/>
+            <textarea id="detail" name="message" placeholder="Description" value=""></textarea>
+            <button id="post" type="submit" >POST</button>
+        </div>
+    </div>
+</body>
+</html>
 
+
+-----------------------------------------
+-----------------------------------------
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800&display=swap');
+
+img{
+    max-width:5%;
+    height:auto;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Nunito Sans';
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	padding: 16px 80px;
+	background-color: white;
+	box-shadow: 0px 6px 9px rgba(0, 0, 0, 0.08);
+}
+
+nav ul {
+	display: flex;
+	flex-flow: row;
+	list-style: none;
+	width: 300px;
+	justify-content: space-between;
+	align-items: center;
+}
+
+nav ul a {
+	text-decoration: none;
+	color: black;
+}
+
+.button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 186px;
+	height: 40px;
+	background: #6C63FF;
+	border-radius: 4px;
+	font-size: 18px;
+	line-height: 25px;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+}
+
+/* .fa-plus-circle {
+	margin-right: 0.8em;
+} */
+
+/* .body-div1, .body-div2 {
+	margin-left: 150px;
+	margin-right: 150px;
+} */
+
+.body-div1 {
+	margin-top: 25px;
+	font-size: 24px;
+	line-height: 33px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 60px;
+}
+
+.article-card {
+	width: 320px;
+	margin: 30rem 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.article-card h1 {
+	margin-top: 20px;
+	font-weight: 600;
+	font-size: 25px;
+	line-height: 27px;
+}
+
+.article-card p {
+	font-weight: 400;
+	font-size: 17px;
+	line-height: 22px;
+	margin: 15px 0;
+}
+
+#image{
+	margin-top: 30px;
+}
+.body-div2 {
+	display: flex;
+	flex-direction: row ;
+	/* justify-content: space-between; */
+	float: left;
+}
+
+#popup {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	display: none;
+	position: fixed;
+	background-color: #313131;
+	overflow: auto;
+}
+
+img#close {
+	position: absolute;
+	right: -910px;
+	margin: 13px 0px 0px 19px;
+	cursor: pointer;
+	z-index: 9;
+}
+
+img#rect {
+	position: absolute;
+	width: 5px;
+	height: 41px;
+	background: #FE9A28;
+	z-index: 9;
+	margin: 41px 0px 0px 18px;
+}
+
+div#popupContact {
+	display: none;
+	flex-direction: column;
+	position: absolute;
+	left: 45%;
+	top: 17%;
+	margin-left: -400px;
+}
+
+#card {
+	position: absolute;
+	display: flex;
+	justify-content: flex-center;
+	align-items: center;
+	/* width: 920px; height : 572px; */
+	padding: 108px 0px 0px 18px;
+	flex-direction: column;
+	border: 2px solid gray;
+	font-family: raleway;
+	background-color: #fff;
+	/* height: 572px; */
+}
+
+h2 {
+	position: absolute;
+	width: 102px;
+	height: 33px;
+	margin: 41px 0px 0px 42px;
+	font-family: Nunito;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	line-height: 33px;
+	z-index: 9; display : flex;
+	align-items: center;
+	color: #000000;
+	display: flex;
+}
+
+input[type="text"] {
+	
+	padding: 0px 0px 0px 21px;
+	width: 884px;
+	height: 49px;
+	color: #828282;
+	font-size: 18px;
+	line-height: 25px;
+	font-family: Nunito;
+	font-style: normal;
+	font-weight: normal;
+}
+
+textarea {
+	margin:14px 0px 0px 0px;
+	padding: 12px 0px 0px 20px;
+	width: 884px;
+	height: 232px;
+	font-family: Nunito;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 25px;
+	display: flex;
+	color: #828282;
+}
+
+::placeholder {
+	font-family: Nunito;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 25px;
+	color: #828282;
+}
+
+#post{
+font-family: Nunito;
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 25px;
+width: 100px;
+height: 39px;
+margin: 71px 64px 103px 784px;
+align-items: center;
+text-align: center;
+background: #6C63FF;
+border-radius: 4px;
+color: #FFFFFF;
+}
+
+---------------------------
+--------------------------
+class Blog{
+    constuctor(title,detail){
+        this.title=title;
+        this.detail=detail;
+    }
+    addTitle(){
+        var title_card = document.createElement('h1');
+        title_card.setAttribute("id","blog-title");
+        console.log(title_card);
+        document.getElementById('card-text').appendChild(title_card);
+        title_card.innerHTML += this.title;
+    }
+addDescription(){
+    var description_card = document.createElement('p');
+    description_card.setAttribute("id","blog-description");
+    console.log(description_card);
+    document.getElementById('card-text').appendChild(description_card);
+    description_card.innerHTML += this.description;
+}
+}
+var addpost=document.getElementById('popupContact');
+var blog=document.getElementById('addBlog');
+var closepost=document.getElementById('close');
+blog.addEventListener("click",function(){
+    addpost.style.display="block";
+   
+});
+closepost.addEventListener("click",function(){
+    addpost.style.display="none";
+   
+});
+document.getElementById("post").addEventListener("click",function(){
+    document.getElementById("popupContact").style.display="none";
+    var $img=document.createElement("img");
+    $img.setAttribute("src","./assets/javascript.png");
+    document.getElementById("card-text").appendChild($img);
+    var $title=document.getElementById("title").value;
+    var $detail=document.getElementById("detail").value;
+    var object1=new Blog($title,$detail);
+});
