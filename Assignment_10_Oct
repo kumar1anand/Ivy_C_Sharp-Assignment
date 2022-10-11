@@ -12,9 +12,9 @@
     <nav>
         <img src="https://camo.githubusercontent.com/2491c8579de1447c08e2ea695bf0c97a62335f90cc1400891a068e70aa568e4d/68747470733a2f2f69312e66616365707265702e696e2f50726f477261642f70726f677261642d6c6f676f2e706e67" alt="logo" />
         <ul>
-            <li> <a href="/displayCard.html">My Blogs</a></li>
-            <li> <a href="/displayCard.html">Login</a></li>
-            <li> <a href="/displayCard.html">Sign Up</a></li> 
+            <li> <a href="/test.html">My Blogs</a></li>
+            <li> <a href="/test.html">Login</a></li>
+            <li> <a href="/test.html">Sign Up</a></li> 
         </ul>
     </nav>
     <div class="body-div1">
@@ -47,8 +47,114 @@
     </div>
 </body>
 </html>
+------------------------------------------
+------------------------------------------
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+    body{
+   
+
+}
+.hello{
+        border:  2px solid black;
+        background-color: green;
+        width: 200px;
+        margin: auto;
+        padding: 100px;
+        height: 200px;
+}
+hr,h1{   
+   margin-left: 500px;
+   margin-right: 500px;
+}
+hr{
+     border: 1px solid green;
+}
+button {
+   font-size: 18px;
+   font-weight: bold;
+   background-color: rgb(10, 119, 13);
+   color: white;
+   padding: 14px 20px;
+   margin: 8px 0;
+   border: none;
+   cursor: pointer;
+   width: 100px;
+   opacity: 0.9;
+}
+button:hover {
+   opacity:1;
+}
+.cancel {
+   padding: 14px 20px;
+   background-color: #ff3d2f;
+}
+
+.c1{
+    margin: auto;
+    margin-right:0px ;
+    width: 200px;
+    height: 30px;
+    padding: 10px;
+    margin-left: 0px;
+}
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 19px;
+  margin: 2px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+.formContainer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+}
+.SignUp{
+    color: yellow;
+    background-color: red;
+}
+.bg-image{
+    border: 2px solid red;
+    margin-left: 80%;
+    margin-bottom: 10px;
 
 
+}
+
+
+</style>
+<body>
+    
+    <h1>Sign Up Form</h1>
+    <hr>
+    <form class="hello">
+    <div class="formContainer">
+    
+    <hr>
+
+    <input type="text" class="c1" placeholder="Enter Email" name="email" required><br>
+
+    <input type="password" class="c1" placeholder="Enter Password" name="password" required><br>
+
+    <input type="password" class="c1"placeholder="Repeat Password" name="repeatPassword"
+    required><br>
+    <label>
+    <input type="checkbox" checked="checked" name="remember" style="marginbottom: 15px"> Remember me
+</label>
+
+<button type="button" class="SignUp">SignUp</button>
+
+</div>
+</div>
+</form>
+</body>
+</html>
 -----------------------------------------
 -----------------------------------------
 @import url('https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800&display=swap');
