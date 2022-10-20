@@ -32,9 +32,9 @@ namespace Encrypt
     {
         static void Main(string[] args)
         {
-            /* FileStream fs1 = new FileStream("C:\\Users\\manish.jaiswal\\OneDrive - Entain Group\\Documents\\Training\\17c#Recap\\filetest.txt",FileMode.Open);
+            /* FileStream fs1 = new FileStream("C:\\Users\\anand.kumar\\OneDrive - Entain Group\\Documents\\Training\\17c#Recap\\filetest.txt",FileMode.Open);
 
-             FileStream fs2 = new FileStream("C:\\Users\\manish.jaiswal\\OneDrive - Entain Group\\Documents\\Training\\17c#Recap\\output.txt", FileMode.Open);*/
+             FileStream fs2 = new FileStream("C:\\Users\\anand.kumar\\OneDrive - Entain Group\\Documents\\Training\\17c#Recap\\output.txt", FileMode.Open);*/
 
             /*string path = "C:\\Users\\manish.jaiswal\\OneDrive - Entain Group\\Documents\\Training\\17c#Recap\\filetest.txt";
            // File.ReadAllText( path+"\\filetest.txt");*/
