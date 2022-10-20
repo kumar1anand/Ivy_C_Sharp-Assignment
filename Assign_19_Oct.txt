@@ -43,7 +43,7 @@ namespace Encrypt
 
             Console.WriteLine(content);
 
-            byte key = 5;
+            byte key = 2;
 
             string encryptedString = "";
 
