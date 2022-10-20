@@ -1,0 +1,61 @@
+
+1.
+using System.Globalization;
+
+namespace Encrypt
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {           
+
+            string str = "C:\\Users\\anand.kumar\\OneDrive - Entain Group\\Documents\\file_test\\file.txt";
+            File.ReadAllText( str+"\\file.txt");
+            string content = File.ReadAllText(str + "\\file.txt");
+            Console.WriteLine(content);      
+
+           
+        }
+    }
+}
+---------------------
+---------------------
+
+
+
+
+using System.Globalization;
+
+namespace Encrypt
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            /* FileStream fs1 = new FileStream("C:\\Users\\manish.jaiswal\\OneDrive - Entain Group\\Documents\\Training\\17c#Recap\\filetest.txt",FileMode.Open);
+
+             FileStream fs2 = new FileStream("C:\\Users\\manish.jaiswal\\OneDrive - Entain Group\\Documents\\Training\\17c#Recap\\output.txt", FileMode.Open);*/
+
+            /*string path = "C:\\Users\\manish.jaiswal\\OneDrive - Entain Group\\Documents\\Training\\17c#Recap\\filetest.txt";
+           // File.ReadAllText( path+"\\filetest.txt");*/
+
+            /*string content = File.ReadAllText(path + "\\filetest.txt");
+
+            Console.WriteLine(content);
+
+            byte key = 5;
+
+            string encryptedString = "";
+
+            foreach(char c in content)
+            {
+                encryptedString += (char) (c - key);
+            }*/
+
+            /*  Console.WriteLine(encryptedString);*/
+            string path = "C:\\Testing\\new.txt";
+            File.Encrypt(path);
+
+        }
+    }
+}
