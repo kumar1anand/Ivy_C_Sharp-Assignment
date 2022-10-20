@@ -36,7 +36,7 @@ namespace Encrypt
 
              FileStream fs2 = new FileStream("C:\\Users\\anand.kumar\\OneDrive - Entain Group\\Documents\\Training\\17c#Recap\\output.txt", FileMode.Open);*/
 
-            /*string path = "C:\\Users\\manish.jaiswal\\OneDrive - Entain Group\\Documents\\Training\\17c#Recap\\filetest.txt";
+            /*string path = "C:\\Users\\anand.kumar\\OneDrive - Entain Group\\Documents\\Training\\17c#Recap\\filetest.txt";
            // File.ReadAllText( path+"\\filetest.txt");*/
 
             /*string content = File.ReadAllText(path + "\\filetest.txt");
