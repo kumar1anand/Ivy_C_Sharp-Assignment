@@ -1,7 +1,13 @@
 
-1.
-using System.Globalization;
+1.Write a C# program to
+1. Open the first file. Read the contents and display it on console.
+2. Wait for the task to be over. Open a second file and display the contents in the file.
 
+Create a C# program to
+1. Create 2 directories. Create 1 file each in the respective directory. Then swap the files from one directory to another.
+using System.Globalization;
+----------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
 namespace Encrypt
 {
     internal class Program
@@ -20,7 +26,8 @@ namespace Encrypt
 }
 ---------------------
 ---------------------
-2. 
+2. Wait for the task to be over. Open a second file and display the contents in the file.
+
 namespace _1.File_Handle
 {
     internal class Program
@@ -62,7 +69,12 @@ namespace _1.File_Handle
 
 ------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------
-3.
+3.Create 2 directories. Create 1 file each in the respective directory. Then swap the files from one directory to another.
+using System.Globalization;
+
+
+
+
 namespace _2.SwapFile
 {
     internal class Program
