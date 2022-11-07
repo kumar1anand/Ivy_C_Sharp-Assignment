@@ -20,9 +20,87 @@ namespace Encrypt
 }
 ---------------------
 ---------------------
+2. 
+namespace _1.File_Handle
+{
+    internal class Program
+    {
+       static async Task Main(string[] args)
+        {
+            string path1 = "C:\\Users\\anand.kumar\\OneDrive - Entain Group\\Documents\\Training\\up.txt";
 
 
 
+           string path2 = "C:\\Users\\anand.kumar\\OneDrive - Entain Group\\Documents\\Training\\polo.txt";
+
+
+
+           if (File.Exists(path1))
+            {
+                // Read all the content in one string
+                // and display the string
+                string str = File.ReadAllText(path1);
+                Console.WriteLine(str);
+            }
+
+
+
+           if (File.Exists(path2))
+            {
+                Thread.Sleep(2000);
+                string str = File.ReadAllText(path2);
+                Console.WriteLine(str);
+            }
+
+
+
+
+
+       }
+    }
+}
+
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+3.
+namespace _2.SwapFile
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string path = "C:\\Users\\anand.kumar\\OneDrive - Entain Group\\Documents\\Training";
+            Directory.CreateDirectory(path+"\\dir1");
+            Directory.CreateDirectory(path + "\\dir2");
+
+
+
+           FileStream fs1 = File.Create(path + "\\dir1\\file1.txt");
+            FileStream fs2 = File.Create(path + "\\dir2\\file2.txt");
+
+
+
+           StreamWriter sw =new StreamWriter(fs1);
+            sw.Write("This is File 1");
+            sw.Close();
+
+           fs1.Close();
+           fs2.Close();
+
+
+
+           File.Move(path + "\\dir1\\file1.txt", path + "\\dir2\\file4.txt");
+            /*   File.Delete(path + "\\dir1\\file1.txt");*/
+
+
+           File.Move(path + "\\dir2\\file2.txt", path + "\\dir1\\file2.txt");
+            /*   File.Delete(path + "\\dir2\\file2.txt");*/
+
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
 
 using System.Globalization;
 
